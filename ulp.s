@@ -1,3 +1,19 @@
+/**
+ * LED blink demo using the ESP32 ULP processor. 
+ * 
+ * Mahesh Viswanathan, Jan 2020, mahesh@leakspotter.com
+ * 
+ * GPIO2, aka RTC_GPIO12, is toggled high and low. An LED connected to it will blink.
+ * Bonus: on some ESP32 boards, the on-board (blue) LED is on GPIO16. If GPIO2 is tied to GPIO16,
+ * it reduces the component count and an external LED isn't required. As GPIO16 is not in 
+ * the RTC register, the on-board LED cannot otherwise be used by the ULP.
+ * 
+ * sources synthesized:
+ * https://github.com/CoretechR/ESP32-Handheld/tree/master/Memo
+ * 
+ */
+
+
 #include "soc/rtc_cntl_reg.h"
 #include "soc/rtc_io_reg.h"
 #include "soc/soc_ulp.h"
